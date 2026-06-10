@@ -9,6 +9,9 @@ conn= get_connection()
 
 df=pd.read_sql(query,conn)
 
-print("Dataset shape:" ,df.shape)
-print("Dataset columns:" ,df.columns)
-print("First 5 rows:",df.head(5))
+df.to_csv(
+    'data/predictions/customer_features.csv',
+    index=False
+)
+
+print("Dataset shape:", df.shape)
